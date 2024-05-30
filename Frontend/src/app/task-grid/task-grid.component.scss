@@ -1,0 +1,32 @@
+
+
+.task-columns {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa; // Light background color for the task board
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .task-column {
+    flex: 2;
+    max-width: 300px; // Ensure columns do not grow too wide
+    background-color: #ddb7b25e; // White background for individual columns
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 1.5rem;
+      color: #602437; // Dark brown for headers
+      border-bottom: 3px solid #602437; // Light gray divider under headers
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+    }
+
+    app-task-card {
+      margin-bottom: 20px; // Increased space between task cards
+    }
+  }
+}

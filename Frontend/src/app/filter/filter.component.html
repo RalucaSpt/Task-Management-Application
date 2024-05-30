@@ -1,0 +1,5 @@
+<div class="filter-buttons" style="display: flex; flex-wrap: wrap;">
+  <button *ngFor="let status of statuses" mat-raised-button (click)="selectStatus(status)" style="flex-grow: 1; margin: 4px;">
+    {{ status }}
+  </button>
+</div>

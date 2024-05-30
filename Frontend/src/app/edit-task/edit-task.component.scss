@@ -1,0 +1,42 @@
+/* Culori personalizate */
+:root {
+  --background-color: #f0f0f0; /* Culoare fundal */
+  --text-color: #333; /* Culoare text */
+}
+
+/* Stiluri pentru dialog */
+.mat-dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color); /* Aplică culoarea de fundal */
+}
+
+/* Stiluri pentru conținutul dialogului */
+#editTaskContent {
+  width: 300px; /* Poți ajusta dimensiunea după necesitate */
+}
+
+/* Stiluri pentru formular */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+mat-label {
+  font-weight: bold;
+  color: var(--text-color); /* Aplică culoarea textului */
+}
+
+/* Stiluri pentru acțiunile dialogului */
+#editTaskActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Stiluri pentru butoane */
+mat-dialog-actions button {
+  margin-left: 10px;
+}

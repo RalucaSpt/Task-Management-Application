@@ -1,0 +1,44 @@
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5%;
+      background-color: #6024378b;
+      color: whitesmoke;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+  
+      &:focus {
+        box-shadow: 0 0 0 3px #6024378b;
+      }
+  
+      &:first-child {
+        margin-left: 0;
+      }
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .filter-buttons button {
+        flex-grow: 1;
+        margin: 4px;
+      }
+}
+  

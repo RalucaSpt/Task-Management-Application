@@ -1,0 +1,49 @@
+.pastel-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; // Adaugă spațiu între carduri
+
+  mat-card-header {
+    background-color: #602437; // Light orange
+    mat-card-title {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+  }
+
+  mat-card-content {
+    p {
+      color: #333;
+      font-size: 1rem;
+    }
+  }
+
+  mat-card-footer {
+    p {
+      font-weight: 600;
+      font-size: large;
+      align-items: center;    }
+  }
+
+  mat-divider {
+    background-color: #bdbdbd;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin-left: 10px;
+      mat-icon {
+        color: #b9375e; // Orange
+      }
+      &.mat-primary {
+        mat-icon {
+          color: #ff9ebb; // Blue
+        }
+      }
+    }
+  }
+}

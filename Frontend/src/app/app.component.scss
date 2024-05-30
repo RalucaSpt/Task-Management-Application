@@ -1,0 +1,20 @@
+body {
+  background-color: #fed0bb; /* sau orice altă culoare sau imagine de fundal */
+}
+
+.custom-toolbar {
+  background-color: #4b1b2a;
+  ; 
+  color: #e8c2ce; 
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+
+  button {
+    background-color: #ddb7b25e;
+    color: #fed0bb; 
+    font-weight: bold;
+    text-transform: uppercase; 
+  }
+}

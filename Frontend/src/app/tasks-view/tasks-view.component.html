@@ -1,0 +1,28 @@
+
+<div class="header">
+  <h1 class="page-title">Task-uri</h1>
+  <div class="buttons">
+    <button mat-button (click)="isList = true">
+      <mat-icon>list</mat-icon>
+    </button>
+    <button mat-button (click)="isList = false">
+      <mat-icon>grid_view</mat-icon>
+    </button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<p>
+  {{ notificationMessage }}
+</p>
+
+<div class="view-container">
+  <div *ngIf="isList; else gridView">
+    <app-task-list></app-task-list>
+  </div>
+  
+  <ng-template #gridView>
+    <app-task-grid></app-task-grid>
+  </ng-template>
+</div>
