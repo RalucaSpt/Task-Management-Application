@@ -1,94 +1,84 @@
-### Task Management Application Documentation
+### Task Management Application - Documentation
 
-#### Descriere
-Task Management Application este o aplicație dezvoltată pentru a gestiona sarcinile personale sau de echipă. Aplicația permite utilizatorilor să creeze, vizualizeze, editeze și șteargă sarcini, beneficiind de o interfață intuitivă și de notificări în timp real. Este construită utilizând Angular pentru front-end și ASP.NET Core pentru back-end, împreună cu o bază de date MongoDB pentru stocare.
+#### Description
+This task management application is designed to help users efficiently manage their daily tasks. The application is developed using Angular for the user interface, ASP.NET Core for the backend, and MongoDB as the database. Real-time notifications are implemented with SignalR, and the API is documented using Swagger UI.
 
-#### Specificații Funcționale
-- **Adăugare de sarcini:** Utilizatorii pot adăuga sarcini noi utilizând un formular simplu.
-- **Vizualizare sarcini:** Sarcinile sunt afișate într-o listă sau grilă, cu opțiuni de filtrare și sortare pe categorii.
-- **Editare sarcini:** Sarcinile pot fi modificate direct din interfață utilizând butonul de editare.
-- **Ștergere sarcini:** Utilizatorii pot elimina sarcini folosind butonul de ștergere asociat fiecărei sarcini.
-- **Validare form:** Validarea datelor este realizată pentru a asigura integritatea informațiilor introduse.
-- **Notificări în timp real:** Orice modificare în lista de sarcini este transmisă utilizatorilor conectați prin SignalR.
+#### Functional Specifications
+1. **Task Management:**
+   - Add new tasks.
+   - View the task list.
+   - Edit existing tasks.
+   - Delete tasks.
+2. **Categories and Statuses:**
+   - Tasks can be organized by category and have a status (To Do, In Progress, Done).
+3. **Real-Time Notifications:**
+   - Users are instantly notified when a task is created or modified.
+4. **Validation:**
+   - Field validation when filling out forms.
+5. **Navigation:**
+   - Integrated routing system for seamless transitions between sections.
+6. **API Documentation:**
+   - Swagger UI provides detailed documentation for the API endpoints.
 
-#### Specificații Tehnice
+#### Technical Specifications
 - **Frontend:**
-  - Angular standalone components.
-  - Routing pentru navigare internă.
-  - Formulare reactive pentru validarea datelor.
-  - Integrare cu servicii pentru manipularea sarcinilor.
+  - Angular 16
+  - Reactive forms for validation
+  - Responsive design
 - **Backend:**
-  - ASP.NET Core pentru implementarea API-urilor REST.
-  - SignalR pentru comunicare bidirecțională în timp real.
-- **Baza de date:**
-  - MongoDB utilizată pentru stocarea persistentă a datelor.
-  - Schema personalizată pentru entitatea "Task."
-- **Comunicare:**
-  - HTTP pentru operații CRUD.
-  - WebSockets (prin SignalR) pentru notificări în timp real.
-- **Biblioteci Adiționale:**
-  - uuid pentru generarea ID-urilor unice.
-  - RxJS pentru gestionarea fluxurilor de date și notificări.
+  - ASP.NET Core 7
+  - RESTful API design
+  - SignalR for real-time communication
+- **Database:**
+  - MongoDB
+  - Custom database schema for tasks
+- **API Documentation:**
+  - Swagger UI for detailed endpoint descriptions
 
-#### Diagrama Arhitecturală a Sistemului
-
+#### System Architecture Diagram
 ![image](https://github.com/user-attachments/assets/b8f8f9c1-eb26-484b-b854-c92df001b6c2)
 
 
+#### Installation Procedure (Backend)
 
-#### Procedura de Instalare (pentru backend)
-1. **Instalare Dependințe:**
-   - Asigură-te că ai instalat:
-     - .NET SDK (minim versiunea 6.0).
-     - MongoDB Server.
-     - Node.js (pentru gestionarea frontend-ului).
+1. **Prerequisites:**
+   - Install .NET SDK 7.0 or later.
+   - Set up MongoDB and ensure it is running locally or remotely.
+   - Install Node.js and npm for managing frontend dependencies.
 
-2. **Clonare Repozitoriu:**
+2. **Clone the Repository:**
    ```bash
-   git clone https://github.com/RalucaSpt/Task-Management-Application
+   git clone https://github.com/RalucaSpt/Task-Management-Application.git
    cd Task-Management-Application/Backend
    ```
 
-3. **Configurare MongoDB:**
-   - Creează o bază de date numită `TaskManager`.
-   - Configurația string-ului de conexiune poate fi actualizată în `appsettings.json`:
-     ```json
-     "ConnectionStrings": {
-       "MongoDB": "mongodb://localhost:27017/TaskManager"
-     }
-     ```
-
-4. **Restaurare Pachete:**
+3. **Restore Dependencies:**
    ```bash
    dotnet restore
    ```
 
-5. **Pornire Server:**
+4. **Configure the Application:**
+   - Open the `appsettings.json` file.
+   - Set the MongoDB connection string under the `ConnectionStrings` section.
+
+5. **Run the Application:**
    ```bash
    dotnet run
    ```
-   Backend-ul va fi disponibil la `https://localhost:5001`.
 
-#### Instalare Frontend
-1. **Navigare la Directorul Frontend:**
-   ```bash
-   cd Task-Management-Application/Frontend
-   ```
+6. **Verify API Documentation:**
+   - Open your browser and navigate to `http://localhost:5140/swagger` to access Swagger UI.
 
-2. **Instalare Dependințe:**
-   ```bash
-   npm install
-   ```
+7. **Test API Endpoints:**
+   - Use tools like Postman or Swagger UI to test the endpoints.
 
-3. **Pornire Server de Dezvoltare:**
-   ```bash
-   ng serve
-   ```
-   Aplicația va fi disponibilă la `http://localhost:4200`.
-
-#### Diagrama Flux de Date
-
-![image](https://github.com/user-attachments/assets/b34dd368-fdb7-4f36-8518-168299673611)
+8. **Frontend Setup:**
+   - Navigate to the frontend directory.
+   - Install dependencies with `npm install`.
+   - Run the frontend application using `npm start`.
+  
+   ![image](https://github.com/user-attachments/assets/b34dd368-fdb7-4f36-8518-168299673611)
 
 
+The backend will handle API requests, and the frontend will consume the APIs to manage tasks efficiently. Real-time updates and notifications will be handled by SignalR.
 
