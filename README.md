@@ -1,32 +1,94 @@
-### Task Management Application
+### Task Management Application Documentation
 
-This project is a task management application developed using Angular for the UI and ASP.NET Core for the backend. The application provides CRUD (Create, Read, Update, Delete) operations for tasks, with MongoDB as the database and SignalR for real-time notifications.
+#### Descriere
+Task Management Application este o aplicație dezvoltată pentru a gestiona sarcinile personale sau de echipă. Aplicația permite utilizatorilor să creeze, vizualizeze, editeze și șteargă sarcini, beneficiind de o interfață intuitivă și de notificări în timp real. Este construită utilizând Angular pentru front-end și ASP.NET Core pentru back-end, împreună cu o bază de date MongoDB pentru stocare.
 
-#### Features:
-- **Stylized Layout:** Elements are arranged on the page for optimal user experience. Dimensions and colors can be customized according to preferences.
-- **CRUD Operations:** Perform tasks such as adding, viewing, editing, and deleting tasks directly from the UI.
-  - **Create:** Add tasks using the "Add" button and a form for entering task details.
-  - **Read:** View tasks in a grid or list format, with filtering options based on category.
-  - **Update:** Edit tasks using the "Edit" button for each task and a form for modifying task details.
-  - **Delete:** Remove tasks using the "Delete" button for each task.
-- **Routing:** Components include routing functionality for seamless navigation within the application.
-- **Form Validation:** Validate form fields either client-side or server-side to ensure data integrity.
-- **MongoDB Database:** Utilize MongoDB as the database backend, with a custom database schema.
-- **SignalR Communication:** Implement SignalR to notify clients in real-time when a task is added.
+#### Specificații Funcționale
+- **Adăugare de sarcini:** Utilizatorii pot adăuga sarcini noi utilizând un formular simplu.
+- **Vizualizare sarcini:** Sarcinile sunt afișate într-o listă sau grilă, cu opțiuni de filtrare și sortare pe categorii.
+- **Editare sarcini:** Sarcinile pot fi modificate direct din interfață utilizând butonul de editare.
+- **Ștergere sarcini:** Utilizatorii pot elimina sarcini folosind butonul de ștergere asociat fiecărei sarcini.
+- **Validare form:** Validarea datelor este realizată pentru a asigura integritatea informațiilor introduse.
+- **Notificări în timp real:** Orice modificare în lista de sarcini este transmisă utilizatorilor conectați prin SignalR.
 
-#### Usage:
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Install dependencies for both the frontend and backend.
-4. Run the backend server.
-5. Launch the frontend application.
-6. Access the application in your web browser.
+#### Specificații Tehnice
+- **Frontend:**
+  - Angular standalone components.
+  - Routing pentru navigare internă.
+  - Formulare reactive pentru validarea datelor.
+  - Integrare cu servicii pentru manipularea sarcinilor.
+- **Backend:**
+  - ASP.NET Core pentru implementarea API-urilor REST.
+  - SignalR pentru comunicare bidirecțională în timp real.
+- **Baza de date:**
+  - MongoDB utilizată pentru stocarea persistentă a datelor.
+  - Schema personalizată pentru entitatea "Task."
+- **Comunicare:**
+  - HTTP pentru operații CRUD.
+  - WebSockets (prin SignalR) pentru notificări în timp real.
+- **Biblioteci Adiționale:**
+  - uuid pentru generarea ID-urilor unice.
+  - RxJS pentru gestionarea fluxurilor de date și notificări.
 
-#### Technologies Used:
-- **Frontend:** Angular
-- **Backend:** ASP.NET Core
-- **Database:** MongoDB
-- **Real-Time Communication:** SignalR
+#### Diagrama Arhitecturală a Sistemului
+
+![image](https://github.com/user-attachments/assets/b8f8f9c1-eb26-484b-b854-c92df001b6c2)
 
 
-![TaskTraker](https://github.com/RalucaSpt/TaskTraker/assets/147080664/302fdf44-01f2-436c-b204-a13887b8b975)
+
+#### Procedura de Instalare (pentru backend)
+1. **Instalare Dependințe:**
+   - Asigură-te că ai instalat:
+     - .NET SDK (minim versiunea 6.0).
+     - MongoDB Server.
+     - Node.js (pentru gestionarea frontend-ului).
+
+2. **Clonare Repozitoriu:**
+   ```bash
+   git clone https://github.com/RalucaSpt/Task-Management-Application
+   cd Task-Management-Application/Backend
+   ```
+
+3. **Configurare MongoDB:**
+   - Creează o bază de date numită `TaskManager`.
+   - Configurația string-ului de conexiune poate fi actualizată în `appsettings.json`:
+     ```json
+     "ConnectionStrings": {
+       "MongoDB": "mongodb://localhost:27017/TaskManager"
+     }
+     ```
+
+4. **Restaurare Pachete:**
+   ```bash
+   dotnet restore
+   ```
+
+5. **Pornire Server:**
+   ```bash
+   dotnet run
+   ```
+   Backend-ul va fi disponibil la `https://localhost:5001`.
+
+#### Instalare Frontend
+1. **Navigare la Directorul Frontend:**
+   ```bash
+   cd Task-Management-Application/Frontend
+   ```
+
+2. **Instalare Dependințe:**
+   ```bash
+   npm install
+   ```
+
+3. **Pornire Server de Dezvoltare:**
+   ```bash
+   ng serve
+   ```
+   Aplicația va fi disponibilă la `http://localhost:4200`.
+
+#### Diagrama Flux de Date
+
+![image](https://github.com/user-attachments/assets/b34dd368-fdb7-4f36-8518-168299673611)
+
+
+
